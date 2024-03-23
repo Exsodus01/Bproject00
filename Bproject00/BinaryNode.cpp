@@ -52,8 +52,5 @@ BinaryNode* BinaryNode::GetRight()
 	return this->Right;
 }
 
-BinaryNode* BinaryNode::Getme()
-{
-	return this;
-}
+
 

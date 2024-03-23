@@ -7,12 +7,11 @@ class BinaryNode
 	int Data;
 	std::string Str;
 
-	BinaryNode* Left;
-	BinaryNode* Right;
-
 
 
 public:
+	BinaryNode* Left;
+	BinaryNode* Right;
 
 	BinaryNode();
 	~BinaryNode();
@@ -27,7 +26,7 @@ public:
 	std::string GetStr();
 	BinaryNode* GetLeft();
 	BinaryNode* GetRight();
-	BinaryNode* Getme();
+	
 
 	
 

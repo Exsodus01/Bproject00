@@ -5,10 +5,13 @@
 
 int main() {
 	BinaryTree start;
+	std::string str = "ABCDEFG";
+	start.CreateTree(start.Tree,3);
+	start.CharArray(str,3);
+	start.PreOrderInsert(start.Tree, start.deque);
 
-	start.CreateTree("ABCDEFG",3);
-	start.PreorderPrint(start.Tree);
 
-
+	
+	start.PostorderPrint(start.Tree);
 	return 0;
 }

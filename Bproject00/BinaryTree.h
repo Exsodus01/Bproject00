@@ -1,18 +1,21 @@
 #pragma once
 #include "BinaryNode.h"
+#include <deque>
+
 class BinaryTree : public BinaryNode
 {
 
 
 public:
+	int Depth;
 	BinaryNode* Tree;
-
+	std::deque<std::string>* deque;
 
 	BinaryTree();
 	~BinaryTree();
 
 
-	BinaryNode* CreateNode(int NewData, std::string NewStr);
+	
 	void DeleteNode(BinaryNode* Del);
 	void DeleteTree(BinaryNode* DelTree);
 
@@ -21,10 +24,12 @@ public:
 	void PostorderPrint(BinaryNode* Root);
 
 
-	
-	void CreateTree(std::string NewStr, int NewDepth);
-	void PreorderInsert(BinaryNode* Root,BinaryNode* Insert,int NewDepth,int Depth=0,int Cnt=1);
 
+	void CreateRoot(int Dep);
+	void CreateTree(BinaryNode*& Root,int Dep);
+	void CharArray(std::string NewStr, int NewDepth);
+
+	void PreOrderInsert(BinaryNode* Root,std::deque<std::string>* Deq);
 
 };
 
