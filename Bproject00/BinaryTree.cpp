@@ -58,6 +58,7 @@ void BinaryTree::PreorderPrint(BinaryNode* Root)
 		return;
 
 //	std::cout << Root->GetData() << std::endl;
+	if(Root->GetStr()!="")
 	std::cout << Root->GetStr() << std::endl;
 
 
@@ -80,7 +81,8 @@ void BinaryTree::InorderPrint(BinaryNode* Root)
 
 	InorderPrint(Root->GetLeft());
 
-	std::cout << Root->GetData() << std::endl;
+//	std::cout << Root->GetData() << std::endl;
+	if (Root->GetStr() != "")
 	std::cout << Root->GetStr() << std::endl;
 
 	InorderPrint(Root->GetRight());
@@ -104,6 +106,7 @@ void BinaryTree::PostorderPrint(BinaryNode* Root)
 
 
 	//std::cout << Root->GetData() << std::endl;
+	if (Root->GetStr() != "")
 	std::cout << Root->GetStr() << std::endl;
 
 
@@ -159,12 +162,6 @@ void BinaryTree::CharArray(std::string NewStr, int NewDepth)
 	char ch;
 	std::deque<std::string>* Deque=new std::deque<std::string>;
 
-
-
-
-
-
-
 	//ÆÄ½ÌµÈ charÀ» string º¤ÅÍ¿¡ ÀúÀå
 	while (iss >> ch) {
 
@@ -185,6 +182,10 @@ void BinaryTree::PreOrderInsert(BinaryNode* Root,std::deque<std::string>* Deq)
 {
 	if (Root == nullptr)
 		return;
+
+	if (Deq->empty())
+		return;
+
 
 	if (Root != nullptr) {
 		std::string sTmp = Deq->front();
